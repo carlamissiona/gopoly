@@ -56,3 +56,43 @@ func handleAbout(w http.ResponseWriter, r *http.Request) {
 	t := template.Must(template.New("aboutPage").Parse(aboutPage))
 	t.Execute(w,page)
 }
+
+
+func handleCourseList(w http.ResponseWriter, r *http.Request) {
+ 	// courses, err := allCourses()
+	books, err := allBooks()
+	if err != nil {
+		renderErrorPage(w, err)
+		return
+	}
+  //  *** SETUP Template
+	buf, err := ioutil.ReadFile("www/polymath/home.html")
+	if err != nil {
+		renderErrorPage(w, err)
+		return
+	}
+
+	var page = HomePage{AllBooks: books}
+	indexPage := string(buf)
+	t := template.Must(template.New("indexPage").Parse(indexPage))
+	t.Execute(w, page)
+}
+func handleLessonsLists(w http.ResponseWriter, r *http.Request) {
+ 	// courses, err := allCourses()
+	books, err := allBooks()
+	if err != nil {
+		renderErrorPage(w, err)
+		return
+	}
+  //  *** SETUP Template
+	buf, err := ioutil.ReadFile("www/polymath/home.html")
+	if err != nil {
+		renderErrorPage(w, err)
+		return
+	}
+
+	var page = HomePage{AllBooks: books}
+	indexPage := string(buf)
+	t := template.Must(template.New("indexPage").Parse(indexPage))
+	t.Execute(w, page)
+}
