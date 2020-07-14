@@ -15,9 +15,7 @@ func init() {
 	}
 	db = tmpDB
 
-	// seed
-	_, err := db.Exec(`
-
+	sqlCreate :=`
 		CREATE DATABASE books_database
 		  WITH OWNER = postgres
 		       ENCODING = 'UTF8'
@@ -42,7 +40,9 @@ func init() {
 		);
 		ALTER TABLE books
 		 OWNER TO postgres;
-		 `)
+		 `
+
+	_, err = db.Exec(sqlCreate)
 	if err == nil {
 		panic(err)
 	}
