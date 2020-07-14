@@ -44,8 +44,10 @@ func init() {
 		 `
 
 	_, err = db.Exec(sqlCreate)
+	log.Output("DB DBDBDBD")
 	if err == nil {
 		panic(err)
+
 	}
 
 }
