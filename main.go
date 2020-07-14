@@ -17,41 +17,41 @@ func init() {
 		log.Fatal(err)
 	}
 	db = tmpDB
-
-	sqlCreate :=`
-		CREATE DATABASE books_database
-		  WITH OWNER = postgres
-		       ENCODING = 'UTF8'
-		       TABLESPACE = pg_default
-		       CONNECTION LIMIT = -1;
-
-		-- Table: books
-
-		-- DROP TABLE books;
-
-		CREATE TABLE books
-		(
-		 id serial NOT NULL,
-		 name character varying NOT NULL,
-		 author character varying,
-		 pages integer,
-		 publication_date date,
-		 CONSTRAINT pk_books PRIMARY KEY (id )
-		)
-		WITH (
-		 OIDS=FALSE
-		);
-		ALTER TABLE books
-		 OWNER TO postgres;
-		 `
-
-	_, err = db.Exec(sqlCreate)
-	log.Print("DB DB DB DB DB")
-	if err == nil {
-		log.Print("Database creation err")
-		log.Print(err)
-
-	}
+	// 
+	// sqlCreate :=`
+	// 	CREATE DATABASE books_database
+	// 	  WITH OWNER = postgres
+	// 	       ENCODING = 'UTF8'
+	// 	       TABLESPACE = pg_default
+	// 	       CONNECTION LIMIT = -1;
+	//
+	// 	-- Table: books
+	//
+	// 	-- DROP TABLE books;
+	//
+	// 	CREATE TABLE books
+	// 	(
+	// 	 id serial NOT NULL,
+	// 	 name character varying NOT NULL,
+	// 	 author character varying,
+	// 	 pages integer,
+	// 	 publication_date date,
+	// 	 CONSTRAINT pk_books PRIMARY KEY (id )
+	// 	)
+	// 	WITH (
+	// 	 OIDS=FALSE
+	// 	);
+	// 	ALTER TABLE books
+	// 	 OWNER TO postgres;
+	// 	 `
+	//
+	// _, err = db.Exec(sqlCreate)
+	// log.Print("DB DB DB DB DB")
+	// if err == nil {
+	// 	log.Print("Database creation err")
+	// 	log.Print(err)
+	//
+	// }
 
 }
 
