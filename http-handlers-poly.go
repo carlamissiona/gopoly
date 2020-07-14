@@ -38,9 +38,10 @@ func handleTos(w http.ResponseWriter, r *http.Request) {
 		renderErrorPage(w, err)
 		return
 	}
+	var page = IndexPage{nil}
 	tosPage := string(buf)
 	t := template.Must(template.New("tosPage").Parse(tosPage))
-	t.Execute(w)
+	t.Execute(w,page)
 }
 
 func handleAbout(w http.ResponseWriter, r *http.Request) {
@@ -50,7 +51,8 @@ func handleAbout(w http.ResponseWriter, r *http.Request) {
 		renderErrorPage(w, err)
 		return
 	}
+	var page = IndexPage{nil}
 	aboutPage := string(buf)
 	t := template.Must(template.New("aboutPage").Parse(aboutPage))
-	t.Execute(w)
+	t.Execute(w,page)
 }
