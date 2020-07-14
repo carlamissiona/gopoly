@@ -1,13 +1,13 @@
 package main
 
 import (
-	"fmt"
+	_ "fmt"
 	"io/ioutil"
-	"log"
+	_ "log"
 	"net/http"
-	"strconv"
+	_ "strconv"
 	"text/template"
-	"time"
+	_ "time"
 )
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
