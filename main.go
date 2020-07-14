@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"log"
 	"net/http"
+	"os"
 )
 
 var db *sql.DB
@@ -56,5 +57,5 @@ func main() {
 	http.HandleFunc("/book.html", handleViewBook)
 	http.HandleFunc("/save", handleSaveBook)
 	http.HandleFunc("/delete", handleDeleteBook)
-	log.Fatal(http.ListenAndServe(":80", nil))
+	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), nil))
 }
