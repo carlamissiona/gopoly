@@ -16,7 +16,7 @@ func init() {
 	db = tmpDB
 
 	// seed
-	err := db.Exec(`
+	_, err := db.Exec(`
 
 		CREATE DATABASE books_database
 		  WITH OWNER = postgres
@@ -44,7 +44,7 @@ func init() {
 		 OWNER TO postgres;
 		 `)
 	if err == nil {
-
+		panic(err)
 	}
 
 }
