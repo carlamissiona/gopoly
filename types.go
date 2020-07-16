@@ -26,6 +26,27 @@ type Book struct {
 	Pages           int
 }
 
+type Course struct {
+	ID              int
+	Name            string
+	Author          string
+	Tag             string
+	Category        string
+	Partners        string
+	Difficulty      string
+	Intro           string
+	NoOfStudents    int
+	Price           float32
+	IsFree          int
+	PassingScore    int
+	HoursToComplete int
+	PublicationDate time.Time
+	Pages           int
+}
+
+
+
+
 //PublicationDateStr returns a sanitized Publication Date in the format YYYY-MM-DD
 func (b Book) PublicationDateStr() string {
 	return b.PublicationDate.Format("2006-01-02")

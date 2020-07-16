@@ -30,6 +30,8 @@ func main() {
 	http.HandleFunc("/", handleHome)
 	http.HandleFunc("/tos", handleTos)
 	http.HandleFunc("/about", handleAbout)
+	http.HandleFunc("/signup", handleAbout)
+	http.HandleFunc("/work-with-us", handleAbout)
 	http.HandleFunc("/courses", handleCourseList)
 	http.HandleFunc("/lessons", handleLessonsLists)
 	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), nil))

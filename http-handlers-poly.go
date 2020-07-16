@@ -6,7 +6,7 @@ import (
 	_ "log"
 	"net/http"
 	_ "strconv"
-	"text/template"
+	"html/template"
 	_ "time"
 )
 
