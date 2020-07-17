@@ -71,8 +71,8 @@ func getCourse() ([]Course, error) {
 				return res, err
 			}
 			currentCourse := Course{ID: id,	Name:name, 	Author:author,  Tag:tag, Category:category, Partners:partners, 	Difficulty:difficulty,
-														  Intro:intro,	NoOfStudents:no_of_students,  Price:price,	IsFree:is_free,  	PassingScore:passing_score, 	HoursToComplete:hours_to_complete, 	PublicationDate:date_created}
-			if date_created.Valid != nil {
+														  Intro:intro,	NoOfStudents:no_of_students,  Price:price,	IsFree:is_free,  	PassingScore:passing_score, 	HoursToComplete:hours_to_complete }
+			if date_created.Valid {
 				currentCourse.PublicationDate = date_created.Time
 			}
 
