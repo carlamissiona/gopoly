@@ -8,13 +8,13 @@ import (
 	_ "strconv"
 	"html/template"
 	_ "time"
-	"models"
+
 )
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
  	// courses, err := allCourses()
 	books, err := allBooks()
-	course, err := getCourse(1)
+	// course, err := getCourse(1)
 	if err != nil {
 		renderErrorPage(w, err)
 		return

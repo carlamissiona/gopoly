@@ -9,7 +9,7 @@ type IndexPage struct {
 }
 type HomePage struct {
 	AllBooks []Book
-	AllCourses []Course
+	// AllCourses []Course
 }
 
 //BookPage represents the content of the book page, available on "/book.html"
