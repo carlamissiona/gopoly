@@ -14,11 +14,11 @@ import (
 func handleHome(w http.ResponseWriter, r *http.Request) {
  	// courses, err := allCourses()
 	books, err := allBooks()
-	course, err := getCourse()
+	course, err := polyweb.getCourse()
 	if err != nil {
 		renderErrorPage(w, err)
 		return
-	}
+	} 
   //  *** SETUP Template
 	buf, err := ioutil.ReadFile("www/polymath/home.html")
 	if err != nil {
@@ -26,7 +26,7 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var page = HomePage{AllBooks: books  }
+	var page = polyweb.HomePage{AllBooks: books  }
 	indexPage := string(buf)
 	t := template.Must(template.New("indexPage").Parse(indexPage))
 	t.Execute(w, page)
