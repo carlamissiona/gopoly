@@ -1,6 +1,6 @@
 package polymath
 
-// import _ "time"
+import "time"
 
 type Book struct {
 	ID              int
