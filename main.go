@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"github.com/clement/apps/polymath/polymath_types"
+	"polymath/polymath_types"
 )
 
 var db *sql.DB

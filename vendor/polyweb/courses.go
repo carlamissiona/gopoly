@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 	"github.com/lib/pq"
-	"github.com/clement/apps/polymath/polymath_types"
+	"polymath/polymath_types"
 )
 
 
