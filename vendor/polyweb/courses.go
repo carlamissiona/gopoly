@@ -9,7 +9,7 @@ import (
 		"log"
 
 )
-var db *sql.DB
+
 
 
 
@@ -32,9 +32,9 @@ var db *sql.DB
 // 	PublicationDate time.Time
 // 	Pages           int
 // }
-func getCourse(CourseId int) ([]Course, error) {
+func getCourse() ([]Course, error) {
 	//Retrieve
-
+	var db *sql.DB
 	tmpDB, err := sql.Open("postgres", os.Getenv("DATABASE_URL"))
 	if err != nil {
 		log.Fatal(err)
@@ -44,13 +44,10 @@ func getCourse(CourseId int) ([]Course, error) {
 	res := []Course{}
 
 
-	stmt, err := db.Prepare(`SELECT id, name, author, tag, category,partner_institution,date_created,passing_score,is_free,hours_to_complete,intro,difficulty,no_of_students,price FROM courses`)
+	rows, err := db.Query(`SELECT id, name, author, tag, category,partner_institution,date_created,passing_score,is_free,hours_to_complete,intro,difficulty,no_of_students,price FROM courses`)
 	if err != nil {  		return nil, err 	}
-	defer stmt.Close()
-	rows, err := stmt.Exec()
-	if err != nil {
-		return nil, err
-	}
+
+
 	defer rows.Close()
 	for rows.Next() {
 			var id int
@@ -75,7 +72,7 @@ func getCourse(CourseId int) ([]Course, error) {
 			}
 			currentCourse := Course{ID: id,	Name:name, 	Author:author,  Tag:tag, Category:category, Partners:partners, 	Difficulty:difficulty,
 														  Intro:intro,	NoOfStudents:no_of_students,  Price:price,	IsFree:is_free,  	PassingScore:passing_score, 	HoursToComplete:hours_to_complete, 	PublicationDate:date_created}
-			if date_created.Time != nil {
+			if date_created.Valid != nil {
 				currentCourse.PublicationDate = date_created.Time
 			}
 
