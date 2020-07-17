@@ -1,11 +1,17 @@
 package polyweb
 
 import (
-	"fmt"
-	"time"
-	"github.com/lib/pq"
-  
+	_ "fmt"
+	_ "time"
+	_ "github.com/lib/pq"
+		"database/sql"
+		"os"
+
 )
+var db *sql.DB
+
+
+
 
 
 // type Course struct {
@@ -27,6 +33,13 @@ import (
 // }
 func getCourse(CourseId int) ([]Course, error) {
 	//Retrieve
+
+	tmpDB, err := sql.Open("postgres", os.Getenv("DATABASE_URL"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	db = tmpDB
+
 	res := []Course{}
 
 
@@ -46,12 +59,12 @@ func getCourse(CourseId int) ([]Course, error) {
 			var category string
 			var partners string
 			var passing_score int
-			var date_created time.Time
+			var date_created pq.NullTime
 			var pages int
 			var is_free int
 			var hours_to_complete int
 			var difficulty string
-			var no_of_students string
+			var no_of_students int
 			var intro string
 			var price float32
 
@@ -61,7 +74,7 @@ func getCourse(CourseId int) ([]Course, error) {
 			}
 			currentCourse := Course{ID: id,	Name:name, 	Author:author,  Tag:tag, Category:category, Partners:partners, 	Difficulty:difficulty,
 														  Intro:intro,	NoOfStudents:no_of_students,  Price:price,	IsFree:is_free,  	PassingScore:passing_score, 	HoursToComplete:hours_to_complete, 	PublicationDate:date_created}
-			if date_created.Valid {
+			if date_created.Time != nil {
 				currentCourse.PublicationDate = date_created.Time
 			}
 
