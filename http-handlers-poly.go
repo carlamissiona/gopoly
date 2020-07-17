@@ -14,7 +14,7 @@ import (
 func handleHome(w http.ResponseWriter, r *http.Request) {
  	// courses, err := allCourses()
 	books, err := allBooks()
-	course, err := getCourse()
+	course, err := polyweb.getCourse()
 	if err != nil {
 		renderErrorPage(w, err)
 		return
