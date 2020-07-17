@@ -7,10 +7,10 @@ import "time"
 type IndexPage struct {
 	AllBooks []Book
 }
-type HomePage struct {
-	AllBooks []Book
-	// AllCourses []Course
-}
+// type HomePage struct {
+// 	AllBooks []Book
+// 	// AllCourses []Course
+// }
 
 //BookPage represents the content of the book page, available on "/book.html"
 //The book page shows info about a given book

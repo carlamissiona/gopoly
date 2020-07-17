@@ -8,7 +8,7 @@ import (
 	_ "strconv"
 	"html/template"
 	_ "time"
- "github.com/clement/apps/polymath/models"
+ "polymath"
 )
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
