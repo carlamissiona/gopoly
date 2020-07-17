@@ -8,17 +8,18 @@ import (
 	_ "strconv"
 	"html/template"
 	_ "time"
-	"polyweb"
+	_ "webpolymath/models"
+	_ "webpolymath/ptypes"
 )
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
  	// courses, err := allCourses()
 	books, err := allBooks()
-	course, err := polyweb.getCourse()
+	course, err := ptypes.getCourse()
 	if err != nil {
 		renderErrorPage(w, err)
 		return
-	} 
+	}
   //  *** SETUP Template
 	buf, err := ioutil.ReadFile("www/polymath/home.html")
 	if err != nil {

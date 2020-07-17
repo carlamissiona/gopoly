@@ -1,4 +1,4 @@
-package polyweb
+package models
 
 import (
 	_ "fmt"
@@ -57,7 +57,7 @@ func getCourse() ([]Course, error) {
 			var category string
 			var partners string
 			var passing_score int
-			var date_created pq.NullTime 
+			var date_created pq.NullTime
 			var is_free int
 			var hours_to_complete int
 			var difficulty string

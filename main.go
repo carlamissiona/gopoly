@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
-	_ "polyweb"
+	_ "webpolymath/ptypes"
 	_ "github.com/lib/pq"
 )
 

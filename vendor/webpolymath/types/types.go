@@ -1,6 +1,7 @@
-package polyweb
+package ptypes
 
 import "time"
+
 
 type Book struct {
 	ID              int
@@ -9,11 +10,6 @@ type Book struct {
 	PublicationDate time.Time
 	Pages           int
 }
-type HomePage struct {
-	AllBooks []Book
-	// AllCourses []Course
-}
-
 
 type Course struct {
 	ID              int
