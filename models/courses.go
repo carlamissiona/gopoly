@@ -3,7 +3,7 @@ package models
 import (
 	"fmt"
 	"time"
-	"main"
+	"github.com/clement/apps/polymath/main"
 	"github.com/lib/pq"
 )
 
