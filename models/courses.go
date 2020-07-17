@@ -2,11 +2,28 @@ package models
 
 import (
 	"fmt"
-	"time"
-	"github.com/clement/apps/polymath/main"
+	"time" 
 	"github.com/lib/pq"
 )
 
+
+type Course struct {
+	ID              int
+	Name            string
+	Author          string
+	Tag             string
+	Category        string
+	Partners        string
+	Difficulty      string
+	Intro           string
+	NoOfStudents    int
+	Price           float32
+	IsFree          int
+	PassingScore    int
+	HoursToComplete int
+	PublicationDate time.Time
+	Pages           int
+}
 func getCourse(CourseId int) ([]Course, error) {
 	//Retrieve
 	res := []Course{}
