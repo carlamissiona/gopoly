@@ -8,7 +8,7 @@ import (
 	_ "strconv"
 	"html/template"
 	_ "time"
- "polymath/types"
+	"polymath_types"
 )
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
