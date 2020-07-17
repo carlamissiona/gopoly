@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"polymath/polymath_types"
+	"polyweb"
 )
 
 var db *sql.DB
