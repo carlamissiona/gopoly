@@ -8,7 +8,7 @@ import (
 	_ "strconv"
 	"html/template"
 	_ "time"
-	"polymath/models"
+	"polymath/models/courses"
 )
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
