@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-	"time"
-	"polymath_types"
+	"time" 
 	"github.com/lib/pq"
 )
 
