@@ -1,4 +1,4 @@
-package polymath
+package types
 
 import "time"
 
