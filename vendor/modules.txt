@@ -3,3 +3,5 @@
 github.com/lib/pq
 github.com/lib/pq/oid
 github.com/lib/pq/scram
+
+polymath/types
