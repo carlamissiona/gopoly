@@ -6,6 +6,7 @@ import (
 	_ "github.com/lib/pq"
 		"database/sql"
 		"os"
+		"log"
 
 )
 var db *sql.DB
@@ -43,10 +44,10 @@ func getCourse(CourseId int) ([]Course, error) {
 	res := []Course{}
 
 
-	stmt, err := db.Prepare(`SELECT id, name, author, tag, category,partner_institution,date_created,passing_score,is_free,hours_to_complete,intro,difficulty,no_of_students,price FROM courses where id = ?`)
+	stmt, err := db.Prepare(`SELECT id, name, author, tag, category,partner_institution,date_created,passing_score,is_free,hours_to_complete,intro,difficulty,no_of_students,price FROM courses`)
 	if err != nil {  		return nil, err 	}
 	defer stmt.Close()
-	rows, err := stmt.Exec(CourseId)
+	rows, err := stmt.Exec()
 	if err != nil {
 		return nil, err
 	}

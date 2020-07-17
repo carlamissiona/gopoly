@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"polyweb"
+	"github.com/lib/pq"
 )
 
 var db *sql.DB
