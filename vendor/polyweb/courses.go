@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"time"
 	"github.com/lib/pq"
-	"polymath_types"
+	"github.com/clement/apps/polymath/polymath_types"
 )
 
-//
+
 // type Course struct {
 // 	ID              int
 // 	Name            string
