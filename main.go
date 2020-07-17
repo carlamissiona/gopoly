@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 	"os"
-	_ "webpolymath/ptypes"
-	_ "github.com/lib/pq"
+	"github.com/clement/apps/polymath/poylwebpolymath/ptypes"
+	 _ "github.com/lib/pq"
 )
 
 var db *sql.DB

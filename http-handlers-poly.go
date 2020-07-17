@@ -8,8 +8,8 @@ import (
 	_ "strconv"
 	"html/template"
 	_ "time"
-	_ "polymath/webpolymath/models"
-	_ "polymath/webpolymath/ptypes"
+	_ "github.com/clement/apps/polymath/webpolymath/models"
+	_ "github.com/clement/apps/polymath/webpolymath/ptypes"
 )
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
