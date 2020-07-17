@@ -3,7 +3,7 @@ package polyweb
 import (
 	_ "fmt"
 	_ "time"
-	_ "github.com/lib/pq"
+	  "github.com/lib/pq"
 		"database/sql"
 		"os"
 		"log"
