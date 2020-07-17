@@ -26,7 +26,7 @@ func handleHome(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var page = HomePage{AllBooks: books , AllCourses }
+	var page = HomePage{AllBooks: books  }
 	indexPage := string(buf)
 	t := template.Must(template.New("indexPage").Parse(indexPage))
 	t.Execute(w, page)
